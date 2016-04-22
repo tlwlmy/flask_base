@@ -1,0 +1,51 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim:fenc=utf-8
+#
+# Copyright © 2015 xym
+#
+
+run_env = "production" # 运行环境对应不同的运行配置，见config, 也可以直接添加环境变量FLASK_ENV = "production"
+secret_key = "ga3hOTNv" # 系统使用的token密匙
+
+class Config:
+    DEBUG = False
+    TESTING = False
+
+    @staticmethod
+    def init_app(app):
+        pass
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    LOG_PATH = "/home/ymserver/log/flask_base/devlopment-default.log" # 默认日志路径
+    ALLOW_IP = ['127.0.0.1']
+
+    #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}:{port}/youmi?charset=utf8',
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
+
+class TestingConfig(Config):
+    TESTING = True
+    LOG_PATH = "/home/ymserver/log/flask_base/testing-default.log" # 默认日志路径
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
+
+class ProductionConfig(Config):
+    HOST = '0.0.0.0'
+    PORT = 5001
+    ROOT_PATH = '/home/ymserver/vhost/flask_base'
+    LOG_PATH = "/home/ymserver/log/flask_base/production-default.log" # 默认日志路径
+
+    REDIS = {
+        'host': 'localhost',
+        'port': 6379,
+        'db': 0
+    }
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+
+config = {
+    'development': DevelopmentConfig,
+    'testing': TestingConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig,
+}
