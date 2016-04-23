@@ -19,9 +19,7 @@ mkvirtualenv [project_name]_env  # 如果第一次部署需要此步创建虚拟
 - pip install -r requirements.txt  #  *[2] [3]
 - 部分包pip会无法正常安装，需要自行下载源码安装, 或根据提示加入允许外部包的参数, 如: pyDes
 
-### 4. 配置项目
-
-#### 4.1 配置config.py
+### 4. 配置config.py
 
 + 配置LOG输入路径，修改权限让 www-data可以读写
 + 配置database链接
@@ -32,13 +30,13 @@ mkvirtualenv [project_name]_env  # 如果第一次部署需要此步创建虚拟
 
 ### 5. 配置uwsgi
 
-#### 5.1 安装:
++ 安装:
 
 ```shell
 sudo apt-get install uwsgi uwsgi-plugin-python
 ```
 
-#### 5.2 配置uwsgi
++ 配置
 - 依赖参考 [4]
 - 参考 docs/flask.ini
 

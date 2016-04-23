@@ -23,7 +23,7 @@
 
 ### 部署安装
 
-参考 [install guide] docs/Installation.md
+参考 [install guide] docs/install_guide.md
 
 
 ### 参考
