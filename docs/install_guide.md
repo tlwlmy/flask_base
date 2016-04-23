@@ -30,13 +30,13 @@ mkvirtualenv [project_name]_env  # 如果第一次部署需要此步创建虚拟
 
 ### 5. 配置uwsgi
 
-+ 安装:
+- 安装:
 
 ```shell
 sudo apt-get install uwsgi uwsgi-plugin-python
 ```
 
-+ 配置
+- 配置
 - 依赖参考 [4]
 - 参考 docs/flask.ini
 
@@ -46,10 +46,10 @@ sudo apt-get install uwsgi uwsgi-plugin-python
 - 参考 docs/nginx.conf
 
 
-### 7.配置Emperor mode
+### 7.配置Emperor模式
 
 - 参考官方supervisor配置使用(http://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html)
-- Whenever a config file is amended, the emperor will automatically restart the vassal.
+- 使用Emperor模式,当修改uwsgi配置文件，emperor会重新启动vassal，即重新加载配置文件
 ```
 # create a directory for the vassals
 sudo mkdir /etc/uwsgi
@@ -83,6 +83,20 @@ uwsgi --emperor /etc/uwsgi/vassals --uid www-data --gid www-data
     >>> print readme
     >>> create_user(xxxx, xxx, xxx)
 ```
+
+
+### 9.重启
+- 命令行启动，根据uwsig配置文件，reload配置目录下：touch reload
+```shell
+uwsgi --ini flask.ini
+cd /home/ymserver/vhost/gateway/flask_base
+touch reload
+```
+- supervisor配置启动
+```shell
+supervisorctl
+restart uwsgi_flask
+    ```
 
 ### 备注
 
