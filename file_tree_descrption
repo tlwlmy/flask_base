@@ -1,0 +1,11 @@
+blog─┬─README.md
+     ├─source─┬─CNAME    # 域名配置
+     │        ├─next_config.yml    # next主题配置
+     │        └─_posts──desptop_development─┬─desptop_development_installed.md    # 台式机双系统安装
+     │                                      ├─desptop_development_graphics.md    # ubuntu系统显卡安装
+     │                                      ├─desptop_development_basic_conf.md    # ubuntu系统基本配置
+     │                                      ├─desptop_development_vim.md    # ubuntu系统vim配置
+     │                                      └─desptop_development_coding.md    # 编码环境基本配置
+     ├─theme    # hexo主题
+     ├─_config.yml    # hexo配置
+     └─node_modules    # nmp库
