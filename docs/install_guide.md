@@ -109,7 +109,7 @@ restart uwsgi_flask
 sudo apt-get install libmysqlclient-dev python-dev
 
 [3] pyDes 不能pip安装
-下载 
+下载
 cd tmp
 wget  http://twhiteman.netfirms.com/pyDES/pyDes-2.0.1.tar.gz 
 tar -zxvf pyDes-2.0.1.tar.gz
