@@ -111,7 +111,7 @@ sudo apt-get install libmysqlclient-dev python-dev
 [3] pyDes 不能pip安装
 下载
 cd tmp
-wget  http://twhiteman.netfirms.com/pyDES/pyDes-2.0.1.tar.gz 
+wget  http://twhiteman.netfirms.com/pyDES/pyDes-2.0.1.tar.gz
 tar -zxvf pyDes-2.0.1.tar.gz
 cd pyDes-2.0.1
 python setup.py install
