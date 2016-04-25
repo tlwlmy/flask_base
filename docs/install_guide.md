@@ -96,7 +96,8 @@ touch reload
 ```shell
 supervisorctl
 restart uwsgi_flask
-    ```
+```
+
 
 ### 备注
 
