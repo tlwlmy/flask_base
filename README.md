@@ -9,6 +9,7 @@
 ├── app                 -- 功能模块目录, 如： app/auth
 ├── cli                 -- 命令行工具/任务, demo: cli/cli_task_demo.py
 ├── config              -- 配置文件目录
+├── file_tree_decrption -- 项目文件目录树
 ├── docs                -- 文档目录
 ├── Makefile            -- js、css压缩配置
 ├── manage.py           -- flask运行接口
@@ -16,7 +17,8 @@
 ├── requirements.txt    -- pip依赖，请用 pip install -r requirements.txt 安装本项目的依赖
 ├── app/static          -- 静态文件目录，其中 static/vendors 内放的是第三方的静态文件，比如bootsrap的
 ├── app/templates       -- 文件模板目录，其中 static/layouts 内放一些共用的上级模板，用于继承
-├── app/common          -- 工具类代码，完成业务无关的通用功能
+├── app/common          -- 公共配置目录，静态变量，公共函数
+├── app/module          -- 公共模块目录，提供给其他模块使用
 └── vendors             -- 第三方系统工具目录，比如appt
 
 ```
