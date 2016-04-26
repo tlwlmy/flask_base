@@ -32,7 +32,7 @@ class TestingConfig(Config):
 class ProductionConfig(Config):
     HOST = '0.0.0.0'
     PORT = 5001
-    ROOT_PATH = '/home/ymserver/vhost/flask_base'
+    ROOT_PATH = '/home/ymserver/vhost/gateway/flask_base'
     LOG_PATH = "/home/ymserver/log/flask_base/production-default.log" # 默认日志路径
 
     REDIS_URL = "redis://:@localhost:6379/0"
