@@ -7,9 +7,10 @@
 from flask import session, render_template, redirect, flash, url_for
 from app.auth import auth
 from app.auth.models import User
-from app import db
+from app import db, redis_store
 from flask import request
 from app.common.functions import api_response
+import time
 
 @auth.route('/index', methods=['GET', 'POST'])
 def index():
@@ -22,6 +23,12 @@ def get_users():
         'users': []
     }
 
+    query_time = redis_store.get('query_time')
+    if query_time is None:
+        query_time = time.time()
+        redis_store.set('query_time', query_time, 3600)
+
+    output['query_time'] = query_time
     user = User.query.all()
     for u in user:
         output['users'].append({'uid': u.uid, 'name': u.name})

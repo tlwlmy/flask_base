@@ -6,17 +6,19 @@
 #
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.redis import FlaskRedis
 from config import config, run_env
 db = SQLAlchemy()
+redis_store = FlaskRedis()
 
 def create_app(config_name=None):
     app = Flask(__name__)
     if not config_name:
         config_name = run_env
     app.config.from_object(config[config_name])
-    print config[config_name]
     config[config_name].init_app(app)
     db.init_app(app)
+    redis_store.init_app(app)
 
     import logging
     from logging.handlers import RotatingFileHandler
