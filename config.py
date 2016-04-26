@@ -36,7 +36,7 @@ class ProductionConfig(Config):
     LOG_PATH = "/home/ymserver/log/flask_base/production-default.log" # 默认日志路径
 
     REDIS_URL = "redis://:@localhost:6379/0"
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:tlwlmy@127.0.0.1:3306/wx?charset=utf8'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 config = {
