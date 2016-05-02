@@ -7,9 +7,11 @@
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.redis import FlaskRedis
+from flask.ext.cache import Cache
 from config import config, run_env
 db = SQLAlchemy()
 redis_store = FlaskRedis()
+cache = Cache()
 
 def create_app(config_name=None):
     app = Flask(__name__)
@@ -19,6 +21,7 @@ def create_app(config_name=None):
     config[config_name].init_app(app)
     db.init_app(app)
     redis_store.init_app(app)
+    cache.init_app(app, config=config[config_name].FLASK_CACHE_CONFIG)
 
     import logging
     from logging.handlers import RotatingFileHandler

@@ -7,7 +7,7 @@
 from flask import session, render_template, redirect, flash, url_for
 from app.auth import auth
 from app.auth.models import User
-from app import db, redis_store
+from app import db, redis_store, cache
 from flask import request
 from app.common.functions import api_response
 import time
@@ -35,4 +35,9 @@ def get_users():
 
     return api_response(output)
 
+@auth.route('/cache')
+@cache.cached(timeout=5, key_prefix='cached_test')
+def root():
+    t = time.time()
+    return str(t)
 
