@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright © 2015 xym
+# Copyright © 2016.05.01 tlwlmy
 #
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy

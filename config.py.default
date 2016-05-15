@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright © 2015 xym
+# Copyright © 2016.05.01 tlwlmy
 #
 
 run_env = "production" # 运行环境对应不同的运行配置，见config, 也可以直接添加环境变量FLASK_ENV = "production"

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # vim:fenc=utf-8
 #
-# Copyright © 2015 xym
+# Copyright © 2016.05.01 tlwlmy
 #
 from app import create_app
 from app.common.functions import api_response
