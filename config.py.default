@@ -30,6 +30,11 @@ class DevelopmentConfig(Config):
         'CACHE_REDIS_URL': 'redis://:@localhost:6379/1'
     }
 
+    # 数据库路由选择
+    SQLALCHEMY_BINDS = {
+        'test2': 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test2?charset=utf8'
+    }
+
 class TestingConfig(Config):
     TESTING = True
     LOG_PATH = "/home/ymserver/log/flask_base/testing-default.log" # 默认日志路径
@@ -47,6 +52,11 @@ class ProductionConfig(Config):
     FLASK_CACHE_CONFIG = {
         'CACHE_TYPE': 'redis',
         'CACHE_REDIS_URL': 'redis://:@localhost:6379/1'
+    }
+
+    # 数据库路由选择
+    SQLALCHEMY_BINDS = {
+        'test2': 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test2?charset=utf8'
     }
 
 config = {
