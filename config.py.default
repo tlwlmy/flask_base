@@ -21,6 +21,10 @@ class DevelopmentConfig(Config):
     LOG_PATH = "/home/ymserver/log/flask_base/devlopment-default.log" # 默认日志路径
     ALLOW_IP = ['127.0.0.1']
 
+    # session
+    SECRET_KEY = 'die32coajd$#!(dad)'
+    PERMANENT_SESSION_LIFETIME = 1800
+
     REDIS_URL = "redis://:@localhost:6379/0"
     #SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://{user}:{password}@{host}:{port}/youmi?charset=utf8',
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
@@ -45,6 +49,10 @@ class ProductionConfig(Config):
     PORT = 5001
     ROOT_PATH = '/home/ymserver/vhost/gateway/flask_base'
     LOG_PATH = "/home/ymserver/log/flask_base/production-default.log" # 默认日志路径
+
+    # session
+    SECRET_KEY = 'die32coajd$#!(dad)'
+    PERMANENT_SESSION_LIFETIME = 1800
 
     REDIS_URL = "redis://:@localhost:6379/0"
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://tlwlmy:pass@127.0.0.1:3306/test?charset=utf8'
