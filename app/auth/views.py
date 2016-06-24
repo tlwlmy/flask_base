@@ -33,6 +33,8 @@ def get_users():
     for u in user:
         output['users'].append({'uid': u.uid, 'name': u.name})
 
+    session['time'] = time.time()
+
     return api_response(output)
 
 @auth.route('/cache')
